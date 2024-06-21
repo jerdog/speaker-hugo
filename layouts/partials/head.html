@@ -6,9 +6,21 @@
     {{ end }}
     </title>
 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ if .Params.seo.description }}{{ .Params.seo.description }}{{ else }}{{ .Summary }}{{ end }}">
+    <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", "}}{{ end }}" />
+
+
+    <link rel="shortcut icon" href="{{ .Site.Data.settings.favicon_image }}">
+    <link href="/css/style.css?version={{ now }}" rel="stylesheet">
+
     <!-- add page specific headers-->
     {{ block "header" . }}{{ end }}
 
+    <!-- add analytics like Google Analytics -->
     {{- partial "analytics.html" . -}}
 
-    {{- partial "scripts.html" . -}}
+    <!-- PureCSS mobile browser viewport meta element -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
