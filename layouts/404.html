@@ -3,15 +3,17 @@
 {{ end }}
 
 {{ define "content" }}
+    {{ with page.Site.GetPage "/404.md" }}
 
-<div class="container">
-    <div class="notFound">
-        <img src="{{ $notFoundImage }}" alt="Page Not Found">
-        <div class="message">
-            <h1>404</h1>
-            <h4>{{ i18n "err_404" }}</h4>
+    <div class="container">
+        <div class="notFound">
+            <img src="/images/404.jpg" alt="Page Not Found">
+            <a href="https://www.freepik.com/free-vector/404-error-with-landscape-concept-illustration_20602801.htm#fromView=search&page=1&position=9&uuid=e4f7117a-de5c-4923-986d-bfd11a509c1c">Image by storyset on Freepik</a>
+            <div class="message">
+                <h4>{{ i18n "err_404" }}</h4>
+            </div>
         </div>
     </div>
-</div>
 
+    {{ end }}
 {{ end }}
