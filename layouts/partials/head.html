@@ -1,0 +1,14 @@
+<head>
+    <title>
+    {{ if ne page.IsHome true }}
+        {{ .Site.Title }} | {{ .Page.Title }}{{ else }}
+        {{ .Page.Title }}
+    {{ end }}
+    </title>
+
+    <!-- add page specific headers-->
+    {{ block "header" . }}{{ end }}
+
+    {{- partial "analytics.html" . -}}
+
+    {{- partial "scripts.html" . -}}

@@ -1,0 +1,17 @@
+{{ define "navbar" }}
+    {{ partial "navigators/navbar.html" . }}
+{{ end }}
+
+{{ define "content" }}
+
+<div class="container">
+    <div class="notFound">
+        <img src="{{ $notFoundImage }}" alt="Page Not Found">
+        <div class="message">
+            <h1>404</h1>
+            <h4>{{ i18n "err_404" }}</h4>
+        </div>
+    </div>
+</div>
+
+{{ end }}
